@@ -1,5 +1,14 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { createClient } from 'pexels';
+
+const client = createClient('l0LGpk9VJut8yAoX6HVI8TXG4c2dmfPQY65Cq4NcVtl0IvyGQvt2oP0o');
+const query = 'Nature';
+
+client.photos.search({ query, per_page: 1 }).then(photos => {console.log(photos)});
+
+// All requests made with the client will be authenticated
+
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();

@@ -1,11 +1,17 @@
 import React from "react";
 import { Link, generatePath } from "react-router-dom";
-
-interface MemberEntity {
-  id: string;
-  login: string;
-  avatar_url: string;
-}
+import { MemberEntity } from "./model";
+import {
+  List,
+  ListItem,
+  Divider,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  Typography
+} from "@mui/material";
+import SearchAppBar from "./header";
+import Container from '@mui/material/Container';
 
 export const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
@@ -13,23 +19,57 @@ export const ListPage: React.FC = () => {
   React.useEffect(() => {
     fetch(`https://api.github.com/orgs/lemoncode/members`)
       .then((response) => response.json())
-      .then((json) => setMembers(json));
+      .then((json) => {
+        setMembers(json);
+        console.log(json);
+      });
   }, []);
 
   return (
     <>
-      <div className="list-user-list-container">
-       <span className="list-header">Avatar</span>
-       <span className="list-header">Id</span>
-       <span className="list-header">Name</span>
-       {members.map((member) => (
-         <>
-           <img src={member.avatar_url} />
-           <span>{member.id}</span>
-           <Link to={generatePath('/detail/:id', {id: member.login})}>{member.login}</Link>
-         </>
-       ))}
-     </div>
+      <SearchAppBar />
+
+    
+      <Container className="container">
+        {members.map((member) => (
+          <React.Fragment key={member.id}>
+            <>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper"
+                }}
+              >
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Remy Sharp" src={member.avatar_url} />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={member.id}
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: "inline" }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        ></Typography>
+                        <Link
+                          to={generatePath("/detail/:id", { id: member.login })}
+                        >
+                          {member.login}
+                        </Link>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </List>
+            </>
+          </React.Fragment>
+        ))}
+      </Container>
     </>
   );
 };

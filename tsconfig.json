@@ -11,8 +11,11 @@
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {"@/*": ["*"]}
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*",
+  "src/declaration.d.ts",],
   "exclude": ["node_modules"]
 }

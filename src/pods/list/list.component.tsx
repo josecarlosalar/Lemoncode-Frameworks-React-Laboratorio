@@ -2,71 +2,30 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Container from "@mui/material/Container";
-import { MemberEntity } from "../../model";
-import { Navbar } from "@/ui";
+import { MemberEntity } from "@/pods";
 import {
   SearchOrganization,
   GridMembers
 } from "@/github-api";
-import { SpaRounded } from "@mui/icons-material";
 import { AppLayout } from "@/layout";
+import { datosOrg } from "./list.vm";
 
-interface datosOrg {
-    name: string;
-    description: string;
-    avatar_url: string;
-    followers: number;
-    following: string;
-}
+interface Props {
+    members: MemberEntity[];
+    handleSearch: (organizationName: string) => void;
+    organization: datosOrg[];
+  }
+  
 
-export const ListPage: React.FC = () => {
+export const ListComponent: React.FC<Props> = (props) => {
   const {organizacion} = useParams();
-  const [members, setMembers] = React.useState<MemberEntity[]>([]);
+  const {members, handleSearch, organization} = props;
   const [organizationName, setOrganizationName] = React.useState<string>(organizacion);
-  const [organization, setOrganization] = React.useState<datosOrg[]>([]);
-
-  React.useEffect(() => {
-    handleSearch(organizationName);
-  }, []);
-
-  const convertToDatosOrg = (json: any): datosOrg => ({
-    name: json.name,
-    description: json.description,
-    avatar_url: json.avatar_url,
-    followers: json.followers,
-    following: json.following
-  });
-
-  const handleSearch = (organizationName: string) => {
-    fetch(`https://api.github.com/orgs/${organizationName}/members`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Error fetching members");
-        }
-      })
-      .then((json) => {
-        setMembers(json);
-      });
-      
-      fetch(`https://api.github.com/orgs/${organizationName}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Error fetching members");
-        }
-      })
-      .then((json) => {
-        setOrganization([convertToDatosOrg(json)]);
-      });
-  };
 
   return (
     <AppLayout>
       <Container>
-        <Grid container spacing={3}>
+        <Grid container spacing={1}>
           <Grid item xs={12} md={12}>
             <SearchOrganization
               organizationName={organizationName}

@@ -11,7 +11,7 @@ import {
   Divider
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { MemberEntity } from "@/model";
+import { MemberEntity } from "@/pods";
 import { routes } from "@/router";
 
 interface MembersProp {

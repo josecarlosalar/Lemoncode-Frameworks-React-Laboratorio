@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -9,9 +8,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CardMedia, Grid } from "@mui/material";
 import  logo  from "../../assets/images/logo-login.png";
-import { routes } from "@/router";
 import { CenterLayout } from "@/layout/center.layout";
-import { ProfileContext } from "@/core/profile";
 
 interface Props {
     onLogin: (username: string, password: string) => void;
@@ -57,7 +54,6 @@ export const LoginComponent: React.FC<Props> = (props) => {
             alignItems: 'center',
           }}
         >
-          
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -93,14 +89,9 @@ export const LoginComponent: React.FC<Props> = (props) => {
           </Box>
           </Box>
           </Grid>
-          
         </Grid>
-        
       </Container>
-        
-        
     </ThemeProvider>
-     
     </CenterLayout>
   );
 };

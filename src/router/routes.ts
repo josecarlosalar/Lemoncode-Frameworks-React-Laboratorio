@@ -1,12 +1,10 @@
 import { generatePath } from "react-router-dom";
 
-
 interface SwitchRoutes {
     root: string;
     list: string;
     detail: string;
 }
-
 
 export const switchRoutes: SwitchRoutes = {
     root: "/",
@@ -14,12 +12,10 @@ export const switchRoutes: SwitchRoutes = {
     detail: "/detail/:organizacion/:id",
 }
 
-
 interface Routes extends Omit<SwitchRoutes, 'detail' | 'list'> {
     list: (organizacion:string) => string;
     detail: (organizacion:string, id:string) => string;
 }
-
 
 export const routes: Routes = {
     ...switchRoutes, 

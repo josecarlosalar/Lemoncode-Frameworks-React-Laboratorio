@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import { LoginScene, ListScene } from "@/scenes";
-import { DetailPage } from "@/github-api";
+import { DetailPage } from "@/scenes";
 import { switchRoutes } from "@/router";
 
 export const AppRouter: React.FC = () => {

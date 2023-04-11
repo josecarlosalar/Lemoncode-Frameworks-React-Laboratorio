@@ -6,7 +6,7 @@ import { MemberEntity } from "@/pods";
 import {
   SearchOrganization,
   GridMembers
-} from "@/github-api";
+} from "@/pods";
 import { AppLayout } from "@/layout";
 import { datosOrg } from "./list.vm";
 

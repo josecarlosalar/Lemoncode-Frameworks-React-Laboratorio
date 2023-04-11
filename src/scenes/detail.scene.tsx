@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { DetailMembers } from "@/github-api";
+import { DetailMembers } from "@/pods";
 import { AppLayout } from "@/layout";
 import { Container } from "@mui/material";
 

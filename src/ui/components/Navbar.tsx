@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, Typography, Button, Divider } from '@mui/material';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { ProfileContext } from '@/core/profile';
+import DataObjectIcon from '@mui/icons-material/DataObject';
 
 export const Navbar: React.FC = () => {
 
@@ -19,6 +20,7 @@ export const Navbar: React.FC = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="fixed">
                 <Toolbar>
+                    <DataObjectIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Lab. React Lemoncode
                     </Typography>

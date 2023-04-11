@@ -1,8 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MemberEntity } from "@/pods";
+import { MemberEntity } from "./list.vm";
 import { ListComponent } from "./list.component";
 import { datosOrg } from "./list.vm";
+import { getOrganization } from "./api/list.api";
+import { getMemberList } from "./list.repository";
 
 export const ListContainer: React.FC = () => {
   const {organizacion} = useParams();
@@ -27,33 +29,15 @@ export const ListContainer: React.FC = () => {
   }, []);
 
   const handleSearch = (organizationName: string) => {
-    fetch(`https://api.github.com/orgs/${organizationName}/members`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Error fetching members");
-        }
-      })
-      .then((json) => {
-        setMembers(json);
-      });
+    
+      getMemberList(organizationName).then(setMembers);
       
-      fetch(`https://api.github.com/orgs/${organizationName}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Error fetching members");
-        }
-      })
-      .then((json) => {
+      getOrganization(organizationName).then((json) => {
         setOrganization([convertToDatosOrg(json)]);
       });
   };
 
   return (
-    
     <ListComponent members={members} handleSearch={handleSearch} organization={organization}/>
   );
 };

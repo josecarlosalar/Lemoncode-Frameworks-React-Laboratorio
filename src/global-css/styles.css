@@ -10,22 +10,3 @@ body {
     background-color: var(--color-body-bg);
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-
-div img {
-    width: 110px;
-}
-
-.layout-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.app-Layout-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
-    padding-top: 20px;
-}

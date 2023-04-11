@@ -62,6 +62,8 @@ module.exports = {
                         options: {
                             modules: {
                                 exportLocalsConvention: "camelCase",
+                                localIdentName: "[path][name]__[local]__[hash:base64:5]",
+                                localIdentContext: path.resolve(__dirname, "src"),
                             }
                         }
                     },

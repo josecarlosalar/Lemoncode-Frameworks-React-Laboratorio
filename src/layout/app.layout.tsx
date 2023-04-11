@@ -1,5 +1,6 @@
 import React from  "react";
 import { Navbar } from "@/ui";
+import classes from "./container.layout.styles.css";
 
 interface Props {
     children: React.ReactNode;
@@ -7,7 +8,7 @@ interface Props {
 
 export const AppLayout: React.FC<Props> = ({children}) => {
     return (
-    <div className="app-Layout-container">
+    <div className={classes.container}>
         <Navbar />
         <main>{children}</main>
     </div>)

@@ -15,43 +15,6 @@ div img {
     width: 110px;
 }
 
-.imagen-login {
-    padding: 80px;
-}
-
-.datosOrg {
-    padding-left: 15px;
-}
-
-.gridList {
-    margin-top: 0px;
-}
-
-.avatar-list {
-    width: 50px;
-}
-
-li {
-    display: flex;
-}
-
-.whiteButton {
-    color: white;
-    background-color: #fff;
-}
-
-.search {
-    width: 70%;
-}
-
-.sombra-img {
-    box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 15px;
-}
-
-.imagen-org {
-    width: 100%;
-}
-
 .layout-center {
     display: flex;
     justify-content: center;

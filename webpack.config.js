@@ -10,7 +10,7 @@ module.exports = {
         plugins: [new TsconfigPathsPlugin()]
     },
     entry: {
-        app: ["./index.tsx", "./styles.css"],
+        app: ["./index.tsx", "./global-css/styles.css"],
     },
     devtool: "eval-source-map",
     stats: "errors-only",
@@ -42,7 +42,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
+                include: /global-css/,
                 use: [{
                         loader: "style-loader",
                     },
@@ -50,6 +50,23 @@ module.exports = {
                         loader: "css-loader",
                     },
                 ],
+            },
+            {
+                test: /\.css$/,
+                exclude: /global-css/,
+                use: [{
+                        loader: "style-loader",
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                exportLocalsConvention: "camelCase",
+                            }
+                        }
+                    },
+                ],
+
             },
         ],
     },

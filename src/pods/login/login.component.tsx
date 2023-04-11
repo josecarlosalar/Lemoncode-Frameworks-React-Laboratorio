@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CardMedia, Grid } from "@mui/material";
 import  logo  from "../../assets/images/logo-login.png";
 import { CenterLayout } from "@/layout/center.layout";
+import classes from "./login.styles.css";
 
 interface Props {
     onLogin: (username: string, password: string) => void;
@@ -38,7 +39,7 @@ export const LoginComponent: React.FC<Props> = (props) => {
         
         <Grid container spacing={1}>
           <Grid item xs={6}>
-          <CardMedia className="imagen-login"
+          <CardMedia className={classes.imagenLogin}
             component="img"
             height="600"
             image={logo} 

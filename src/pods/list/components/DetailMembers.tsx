@@ -2,6 +2,7 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography, CardActions, 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { routes } from "@/router";
+import classes from "../list.styles.css";
 
 export const DetailMembers = (props) => {
 
@@ -9,7 +10,7 @@ const { users, id, organizacion } = props;
     
   return (
     <>
-        <Card className="sombra-img" sx={{ maxWidth: 345 }}>
+        <Card className="classes.sombraImg" sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
                 component="img"

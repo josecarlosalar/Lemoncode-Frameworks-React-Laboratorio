@@ -1,0 +1,37 @@
+.datosOrg {
+    padding-left: 15px;
+}
+
+.gridList {
+    margin-top: 0px;
+}
+
+.avatar-list {
+    width: 50px;
+}
+
+.containerSearch {
+    margin-bottom: 10px;
+}
+
+li {
+    display: flex;
+}
+
+.whiteButton {
+    color: white;
+    background-color: #fff;
+}
+
+.search {
+    width: 70%;
+}
+
+.sombra-img {
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 15px;
+}
+
+.imagen-org {
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 15px;
+}

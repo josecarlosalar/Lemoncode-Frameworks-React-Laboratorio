@@ -9,6 +9,7 @@ import {
 } from "@/pods";
 import { AppLayout } from "@/layout";
 import { datosOrg } from "./list.vm";
+import classes from "./list.styles.css";
 
 interface Props {
     members: MemberEntity[];
@@ -36,9 +37,9 @@ export const ListComponent: React.FC<Props> = (props) => {
           
           <Grid container item xs={12} sm={6}>
             <Grid item xs={4} sm={4}>
-                <img className="imagen-org sombra-img" src={organization[0]?.avatar_url} />
+                <img className={classes.imagenOrg} src={organization[0]?.avatar_url} />
             </Grid>
-            <Grid item xs={8} sm={8} className="datosOrg">
+            <Grid item xs={8} sm={8} className={classes.datosOrg}>
                 <h2>Organización</h2>
                 <h3>{organization[0]?.name}</h3>
                 <p>{organization[0]?.description}</p>

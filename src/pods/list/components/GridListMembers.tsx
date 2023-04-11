@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import { MemberEntity } from "@/pods";
 import { routes } from "@/router";
+import classes from "../list.styles.css";
 
 interface MembersProp {
   members: MemberEntity[],
@@ -22,7 +23,7 @@ interface MembersProp {
 export const GridMembers: React.FC<MembersProp> = (props) => {
   const { members, organizationName } = props;
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(5);
+  const [perPage] = useState(5);
 
   const renderListItems = () => {
     const startIndex = (currentPage - 1) * perPage;
@@ -33,7 +34,7 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
         
         <List key={member.id}>
           <ListItem alignItems="flex-start" >
-            <ListItemAvatar className="avatar-list">
+            <ListItemAvatar className="classes.avatarList">
               <Avatar alt="Remy Sharp" src={member.avatarUrl} />
             </ListItemAvatar>
             <ListItemText

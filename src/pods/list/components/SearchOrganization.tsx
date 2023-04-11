@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Grid } from '@mui/material';
+import classes from '../list.styles.css';
 
 interface Props {
     organizationName: string;
@@ -14,7 +15,7 @@ export const SearchOrganization: React.FC<Props> = (props) => {
 
     return (
         <>
-          <Grid container spacing={1}>
+          <Grid className={classes.containerSearch} container spacing={1}>
             <Grid item xs={8}>
                 <TextField 
                     id="outlined-basic" 
@@ -28,7 +29,7 @@ export const SearchOrganization: React.FC<Props> = (props) => {
                     />
             </Grid>
             <Grid item xs={4}>
-                <Button className="search" variant="contained" href="#contained-buttons" onClick={() => {
+                <Button className={classes.search} variant="contained" href="#contained-buttons" onClick={() => {
                     onSearch(organizationName);
                 }}>
                     Search

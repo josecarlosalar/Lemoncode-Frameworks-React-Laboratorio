@@ -17,7 +17,6 @@ interface Props {
     organization: datosOrg[];
   }
   
-
 export const ListComponent: React.FC<Props> = (props) => {
   const {organizacion} = useParams();
   const {members, handleSearch, organization} = props;

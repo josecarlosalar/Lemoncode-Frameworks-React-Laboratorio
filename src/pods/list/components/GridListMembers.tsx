@@ -34,7 +34,7 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
         
         <List key={member.id}>
           <ListItem alignItems="flex-start" >
-            <ListItemAvatar className="classes.avatarList">
+            <ListItemAvatar className={classes.avatarList}>
               <Avatar alt="Remy Sharp" src={member.avatarUrl} />
             </ListItemAvatar>
             <ListItemText

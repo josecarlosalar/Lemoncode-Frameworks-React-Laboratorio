@@ -1,0 +1,26 @@
+.containerSearch {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.search {
+    width: 100%;
+}
+
+.gridRick {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gridCard {
+    margin: 0px;
+}
+
+.contenedor {
+    height: 80vh;
+}
+
+.card {
+    margin: 5px;
+}

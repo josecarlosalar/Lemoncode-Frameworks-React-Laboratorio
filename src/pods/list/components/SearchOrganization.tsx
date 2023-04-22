@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Grid } from '@mui/material';
 import classes from '../list.styles.css';
+import { useDebounce } from 'use-debounce';
 
 interface Props {
     organizationName: string;
@@ -12,6 +13,11 @@ interface Props {
 
 export const SearchOrganization: React.FC<Props> = (props) => {
     const { organizationName, onchangeOrganization, onSearch } = props;
+    const [organizationDebounce] = useDebounce(organizationName, 1000);
+    
+    useEffect(()=>{
+        onSearch(organizationDebounce);
+    },[organizationDebounce]);
 
     return (
         <>
@@ -30,7 +36,7 @@ export const SearchOrganization: React.FC<Props> = (props) => {
             </Grid>
             <Grid item xs={4}>
                 <Button className={classes.search} variant="contained" href="#contained-buttons" onClick={() => {
-                    onSearch(organizationName);
+                    onSearch(organizationDebounce);
                 }}>
                     Search
                 </Button>

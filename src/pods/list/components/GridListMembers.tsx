@@ -11,7 +11,7 @@ import {
   Divider
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { MemberEntity } from "@/pods";
+import { MemberEntity } from "../list.vm";
 import { routes } from "@/router";
 import classes from "../list.styles.css";
 
@@ -24,6 +24,7 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
   const { members, organizationName } = props;
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(5);
+  const [selectedMember, setSelectedMember] = React.useState<MemberEntity>();
 
   const renderListItems = () => {
     const startIndex = (currentPage - 1) * perPage;
@@ -49,7 +50,7 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
                   ></Typography>
                   <Link to={routes.detail(organizationName, member.login)}>
                     {member.login}
-                  </Link>
+                  </Link> 
                 </React.Fragment>
               }
             />

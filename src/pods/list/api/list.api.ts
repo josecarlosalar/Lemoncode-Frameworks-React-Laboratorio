@@ -13,7 +13,6 @@ export const getMemberList = (organizationName: string): Promise<MemberEntity[]>
     )
 }
 
-
 export const getOrganization = (organizationName: string) => {
     return(
         fetch(`https://api.github.com/orgs/${organizationName}`)
@@ -26,3 +25,17 @@ export const getOrganization = (organizationName: string) => {
           })
     )
 }
+
+export const getUser = (id: string) => {
+  return(
+      fetch(`https://api.github.com/users/${id}`)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Error fetching members");
+          }
+        })
+  )
+}
+

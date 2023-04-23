@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { RickMortyComponent } from './rick.component';
-import getResource from './api/getResource';
+import { RickMortyComponent, getResource } from '@/pods';
 
 export const RickMortyContainer: React.FC = () => {
 

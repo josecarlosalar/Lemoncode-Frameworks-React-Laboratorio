@@ -1,5 +1,4 @@
-
-const getResource = async (): Promise<any> => {
+export const getResource = async (): Promise<any> => {
     return(
         fetch(`https://rickandmortyapi.com/api/character`)
               .then((response) => {
@@ -11,5 +10,3 @@ const getResource = async (): Promise<any> => {
               })
     )
 }
-
-export default getResource

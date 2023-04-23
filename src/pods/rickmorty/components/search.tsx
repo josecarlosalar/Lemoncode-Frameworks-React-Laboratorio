@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import classes from '../rick.styles.css';
 import {Character} from '../rick.vm';
 import { useDebounce } from 'use-debounce';

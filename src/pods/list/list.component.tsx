@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Container from "@mui/material/Container";
-import { MemberEntity } from "@/pods";
+import { MemberEntity } from "./list.vm";
 import {
   SearchOrganization,
   GridMembers

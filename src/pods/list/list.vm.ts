@@ -7,7 +7,7 @@ export interface datosOrg {
 }
   
 export interface MemberEntity {
-    id: number;
+    id: string;
     login: string;
     avatarUrl: string;
 }

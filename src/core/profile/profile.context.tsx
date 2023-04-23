@@ -5,7 +5,7 @@ interface Context extends UserProfile {
   setUserProfile: (userProfile: UserProfile) => void;
 }
 
-const noUserLogin = "no user login";
+const noUserLogin = "No user login";
 
 export const ProfileContext = React.createContext<Context>({
   userName: noUserLogin,

@@ -2,7 +2,6 @@ import React from "react";
 import { ProfileContext } from "./profile.context";
 import { createEmptyUserProfile, UserProfile } from "./profile.vm";
 
-
 interface Props {
     children: React.ReactNode;
   }

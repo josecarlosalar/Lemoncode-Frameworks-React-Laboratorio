@@ -27,6 +27,10 @@ export const Navbar: React.FC = () => {
         navigate(routes.rickmorty);
     }
 
+    if (Object.keys(userName).length === 0) {
+        navigate(routes.root);
+      }
+
     return (
     <>
         <Box sx={{ flexGrow: 1 }}>

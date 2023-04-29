@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
+import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { ProfileContext } from '@/core/profile';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import { routes } from '@/router';
+import { cyan, teal } from '@mui/material/colors';
 
 const pages = ['GitHub', 'Rick and Morty'];
 
@@ -27,6 +28,10 @@ export const Navbar: React.FC = () => {
         navigate(routes.rickmorty);
     }
 
+    const gallery = () => {
+        navigate(routes.gallery);
+    }
+
     if (Object.keys(userName).length === 0) {
         navigate(routes.root);
       }
@@ -43,6 +48,7 @@ export const Navbar: React.FC = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
                         <Button onClick={gitHub} color="inherit">GitHub</Button>
                         <Button onClick={rickMorty} color="inherit">Rick & Morty</Button>
+                        <Button onClick={gallery} color="inherit">Gallery</Button>
                     </Box>
                     <Typography color="inherit">User: {userName} | </Typography>
                     <Button onClick={onLogout} color="inherit">Logout</Button>

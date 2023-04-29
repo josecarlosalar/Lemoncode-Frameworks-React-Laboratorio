@@ -5,6 +5,7 @@ interface SwitchRoutes {
     list: string;
     detail: string;
     rickmorty: string;
+    gallery: string
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -12,6 +13,7 @@ export const switchRoutes: SwitchRoutes = {
     list: "/list/:organizacion",
     detail: "/detail/:organizacion/:id",
     rickmorty: "/rickmorty",
+    gallery: "/gallery",
 }
 
 interface Routes extends Omit<SwitchRoutes, 'detail' | 'list'> {

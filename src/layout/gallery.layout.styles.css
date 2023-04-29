@@ -1,0 +1,9 @@
+.contenedor {
+    height: 80vh;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.column {
+    padding: 20px;
+}

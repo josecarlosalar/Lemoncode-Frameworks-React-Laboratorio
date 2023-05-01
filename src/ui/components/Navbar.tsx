@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { routes } from '@/router';
 import { ProfileContext } from '@/core/profile';
 import DataObjectIcon from '@mui/icons-material/DataObject';
-import { routes } from '@/router';
-import { cyan, teal } from '@mui/material/colors';
 
-const pages = ['GitHub', 'Rick and Morty'];
 
 export const Navbar: React.FC = () => {
 
     const navigate = useNavigate();
     const { userName } = React.useContext(ProfileContext);
     const organizacion = "Lemoncode";
+    const page = "1";
 
     const onLogout = () => {
         navigate('/', {
@@ -29,12 +28,14 @@ export const Navbar: React.FC = () => {
     }
 
     const gallery = () => {
-        navigate(routes.gallery);
+        navigate(routes.gallery(page));
     }
 
-    if (Object.keys(userName).length === 0) {
-        navigate(routes.root);
-      }
+    useEffect(()=>{
+        if (userName.length==0) {
+            navigate(routes.root);
+        }
+    },[userName])
 
     return (
     <>

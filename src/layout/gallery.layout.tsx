@@ -2,7 +2,7 @@ import React from  "react";
 import { Navbar } from "@/ui";
 import classes from "./gallery.layout.styles.css";
 import { Grid } from "@mui/material";
-import { CartContainer } from "@/pods/gallery/components/cart.container";
+import { CartContainer } from "@/pods/gallery/cart.container";
 
 interface Props {
     children: React.ReactNode;

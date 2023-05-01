@@ -5,7 +5,7 @@ interface SwitchRoutes {
     list: string;
     detail: string;
     rickmorty: string;
-    gallery: string
+    gallery: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -13,16 +13,18 @@ export const switchRoutes: SwitchRoutes = {
     list: "/list/:organizacion",
     detail: "/detail/:organizacion/:id",
     rickmorty: "/rickmorty",
-    gallery: "/gallery",
+    gallery: "/gallery/:page",
 }
 
-interface Routes extends Omit<SwitchRoutes, 'detail' | 'list'> {
+interface Routes extends Omit<SwitchRoutes, 'detail' | 'list' | 'gallery'> {
     list: (organizacion:string) => string;
     detail: (organizacion:string, login:string) => string;
+    gallery: (page:string) => string;
 }
 
 export const routes: Routes = {
     ...switchRoutes, 
     list: (organizacion) => generatePath("/list/:organizacion", { organizacion }),
     detail: (organizacion: string, id:string) => generatePath("/detail/:organizacion/:id", { organizacion, id }), 
+    gallery: (page: string) => generatePath("/gallery/:page", { page }),
 }

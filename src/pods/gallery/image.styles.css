@@ -44,6 +44,10 @@
     text-align: center;
 }
 
+.titleCheckout {
+    text-align: center;
+}
+
 .headTitle {
     height: 40px;
     margin: 0;
@@ -79,4 +83,22 @@
 
 .headCart {
     text-align: center;
+}
+
+.gridTable {
+    margin: 0;
+    padding: 0;
+}
+
+.imageRow {
+    width: 100px;
+}
+
+.tableRow {
+    width: 300px;
+}
+
+.buttonBuy {
+    padding: 50px;
+    text-align: right;
 }

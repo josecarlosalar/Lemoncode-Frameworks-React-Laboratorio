@@ -6,6 +6,8 @@ interface SwitchRoutes {
     detail: string;
     rickmorty: string;
     gallery: string;
+    checkoutpay: string;
+    gracias: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -14,6 +16,8 @@ export const switchRoutes: SwitchRoutes = {
     detail: "/detail/:organizacion/:id",
     rickmorty: "/rickmorty",
     gallery: "/gallery/:page",
+    checkoutpay: "/checkoutpay",
+    gracias: "/gracias",
 }
 
 interface Routes extends Omit<SwitchRoutes, 'detail' | 'list' | 'gallery'> {

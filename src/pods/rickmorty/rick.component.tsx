@@ -11,9 +11,9 @@ interface Props {
 export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage] = useState(8);
-    const [open, setOpen] = React.useState(false);
     const [filteredCharacters, setFilteredCharacters] = React.useState(characters);
     const [selectedCharacter, setSelectedCharacter] = React.useState<Character>();
+    const [open, setOpen] = React.useState(false);
 
 
     const handleClickOpen = (character: Character) => {
@@ -35,16 +35,16 @@ export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
 
     const renderListItems = () => {
     
-    return  (
-        <Grid className={classes.contenedor} container>
-            <Grid item xs={12} md={12}>
-                <Search characters={characters} onSearch={handleSearch}/>
+        return  (
+            <Grid className={classes.contenedor} container>
+                <Grid item xs={12} md={12}>
+                    <Search characters={characters} onSearch={handleSearch}/>
+                </Grid>
+                <Grid className={classes.gridRick} item xs={12} md={12}>
+                    <GridRickMorty characters={characters} filteredCharacters={filteredCharacters} currentPage={currentPage} perPage={perPage} handleClickOpen={handleClickOpen}/>
+                </Grid>
             </Grid>
-            <Grid className={classes.gridRick} item xs={12} md={12}>
-                <GridRickMorty characters={characters} filteredCharacters={filteredCharacters} currentPage={currentPage} perPage={perPage} handleClickOpen={handleClickOpen}/>
-            </Grid>
-        </Grid>
-    );
+        );
     };
 
     return (

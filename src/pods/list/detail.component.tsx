@@ -32,28 +32,25 @@ const {organizacion, id, user} = Props;
                     <Typography gutterBottom variant="h5" component="div">
                         {user?.name}
                     </Typography>
+                    <br/>
                     <Typography sx={{fontWeight: 'bold'}} variant="body2">
                         User Id:
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {id}
                     </Typography>
-                    <Divider />
+                    <br/>
                     <Typography sx={{fontWeight: 'bold'}} variant="body2">
                         Company:
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {organizacion}
-                    </Typography>
-                    <Divider />
-                    <Typography variant="body2" color="text.secondary">
                         {user?.location}
                     </Typography>
-                    <Divider />
-                    <Typography variant="body2" color="text.secondary">
+                    <br/>
+                    <a target="blank" href={user?.repos_url}>{user?.repos_url}</a> 
 
-                        {user?.repos_url}
-                    </Typography>
+                        
+                    
                     </CardContent>
                 </CardActionArea>
                 <CardActions>

@@ -22,7 +22,10 @@ export const SearchOrganization: React.FC<Props> = (props) => {
     return (
         <>
           <Grid className={classes.containerSearch} container spacing={1}>
-            <Grid item xs={8}>
+            <Grid item xs={3}>
+                
+            </Grid>
+            <Grid item xs={6}>
                 <TextField 
                     id="outlined-basic" 
                     label="Organization" 
@@ -34,8 +37,8 @@ export const SearchOrganization: React.FC<Props> = (props) => {
                     }}
                     />
             </Grid>
-            <Grid item xs={4}>
-                <Button className={classes.search} variant="contained" href="#contained-buttons" onClick={() => {
+            <Grid item xs={3}>
+                <Button className={classes.search} variant="contained" onClick={() => {
                     onSearch(organizationDebounce);
                 }}>
                     Search

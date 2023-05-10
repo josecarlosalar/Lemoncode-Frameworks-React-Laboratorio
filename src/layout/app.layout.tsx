@@ -8,8 +8,9 @@ interface Props {
 
 export const AppLayout: React.FC<Props> = ({children}) => {
     return (
-    <div className={classes.container}>
-        <Navbar />
-        <main>{children}</main>
-    </div>)
+        <div className={classes.container}>
+            <Navbar />
+            <main>{children}</main>
+        </div>
+    )
 }

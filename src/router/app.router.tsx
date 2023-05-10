@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { LoginScene, ListScene, RickMortyScene, DetailScene, GalleryScene, CheckoutScene, GraciasScene } from "@/scenes";
+import { LoginScene, ListScene, RickMortyScene, DetailScene, GalleryScene, CheckoutScene, GraciasScene, PedidosScene, PedidoEnviadoScene } from "@/scenes";
 import { switchRoutes } from "@/router";
 
 export const AppRouter: React.FC = () => {
@@ -14,6 +14,8 @@ export const AppRouter: React.FC = () => {
         <Route path={switchRoutes.gallery} element={<GalleryScene />}/>
         <Route path={switchRoutes.checkoutpay} element={<CheckoutScene />}/>
         <Route path={switchRoutes.gracias} element={<GraciasScene />}/>
+        <Route path={switchRoutes.pedidos} element={<PedidosScene />}/>
+        <Route path={switchRoutes.pedidoEnviado} element={<PedidoEnviadoScene />}/>
       </Routes>
     </BrowserRouter>
   );

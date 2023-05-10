@@ -1,6 +1,9 @@
 .container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
-    padding-top: 20px;
+    grid-template-rows: 1fr;
+    padding-top: 10px; */
+    display: flex;
+    padding-top: 0px;
+    height: 90vh;
 }

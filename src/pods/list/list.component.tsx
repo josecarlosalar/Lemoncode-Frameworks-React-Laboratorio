@@ -24,33 +24,30 @@ export const ListComponent: React.FC<Props> = (props) => {
 
   return (
     <AppLayout>
-      <Container>
-        <Grid container spacing={1}>
-          <Grid item xs={12} md={12}>
-            <SearchOrganization
-              organizationName={organizationName}
-              onchangeOrganization={setOrganizationName}
-              onSearch={handleSearch}
-            />
-          </Grid>
-          
-          <Grid container item xs={12} sm={6}>
-            <Grid item xs={4} sm={4}>
-                <img className={classes.imagenOrg} src={organization[0]?.avatar_url} />
+        <Grid className={classes.globalGrid} container spacing={2}>
+            <Grid item xs={12}>
+              <SearchOrganization
+                organizationName={organizationName}
+                onchangeOrganization={setOrganizationName}
+                onSearch={handleSearch}
+              />
             </Grid>
-            <Grid item xs={8} sm={8} className={classes.datosOrg}>
-                <h2>Organización</h2>
-                <h3>{organization[0]?.name}</h3>
-                <p>{organization[0]?.description}</p>
-                <p>{organization[0]?.followers} <span><strong>Followers</strong></span> | {organization[0]?.following} <span><strong>Following</strong></span></p>
+            <Grid item xs={6} className={classes.gridOrg}>
+                <Grid className={classes.gridImagen} item xs={6} >
+                    <img className={classes.imagenOrg} src={organization[0]?.avatar_url} />
+                </Grid>
+                <Grid item xs={6} className={classes.datosOrg}>
+                    <h2>Organización</h2>
+                    <h3>{organization[0]?.name}</h3>
+                    <p>{organization[0]?.description}</p>
+                    <p>{organization[0]?.followers} <span><strong>Followers</strong></span> | {organization[0]?.following} <span><strong>Following</strong></span></p>
+                </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={12} sm={6} style={{ maxHeight: 700, overflow: "auto" }}>
-            <h2>Miembros</h2>
-            <GridMembers members={members} organizationName={organizationName}/>
-          </Grid>
+            <Grid item xs={6} style={{ maxHeight: 700, overflow: "auto" }}>
+              <h2 className={classes.headGridMembers}>Miembros</h2>
+              <GridMembers members={members} organizationName={organizationName}/>
+            </Grid>
         </Grid>
-      </Container>
     </AppLayout>
   );
 };

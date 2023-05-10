@@ -1,0 +1,75 @@
+.containerPedido {
+    padding: 50px;
+}
+
+.gridTitle {
+    background-color: rgb(213, 202, 188);
+    border: 1px solid black;
+}
+
+.containerCabecera {
+    border: 1px solid rgb(106, 105, 105);
+    height: 300px;
+}
+
+.gridCabecera1 {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(151, 166, 208);
+}
+
+.gridCabecera2 {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(223, 188, 213);
+}
+
+.titlePedido {
+    text-align: center;
+}
+
+.btnEnviar {
+    width: 220px;
+    height: 60px;
+}
+
+.containerValidate {
+    border: 1px solid rgb(138, 138, 138);
+    padding: 5px;
+}
+
+.gridBtnValidate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.gridPedidos {
+    border: 1px solid rgb(123, 123, 123);
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgb(255, 241, 224);
+}
+
+.cell {
+    cursor: pointer;
+}
+
+.gridMaterialPedido {
+    border: 1px solid rgb(123, 123, 123);
+    padding: 5px;
+    background-color: rgb(131, 156, 179);
+}
+
+.btnAceptar {
+    height: 40px;
+}
+
+.btnCancelar {
+    height: 40px;
+}

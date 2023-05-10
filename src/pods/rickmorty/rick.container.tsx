@@ -16,7 +16,6 @@ export const RickMortyContainer: React.FC = () => {
   
     return (
         <RickMortyComponent characters={characters} />
-      
     )
 
 }

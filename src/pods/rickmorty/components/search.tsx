@@ -31,13 +31,12 @@ export const Search: React.FC<Props> = (props) => {
         <>
           <Grid className={classes.containerSearch} container spacing={1}>
             <Grid item xs={8}>
-                <TextField 
-                    id="outlined-basic" 
+                <TextField  
                     label="Personaje" 
                     variant="outlined" 
                     fullWidth
                     size="small"
-                    value={name} onChange={(e) => {
+                    onChange={(e) => {
                         setName(e.target.value);
                         
                     }}

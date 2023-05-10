@@ -31,8 +31,6 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
     const endIndex = startIndex + perPage;
 
     return members.slice(startIndex, endIndex).map((member) => (
-
-        
         <List key={member.id}>
           <ListItem alignItems="flex-start" >
             <ListItemAvatar className={classes.avatarList}>
@@ -57,7 +55,6 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
           </ListItem>
           <Divider variant="inset" component="li" />
       </List>
-    
     ));
   };
 
@@ -72,7 +69,6 @@ export const GridMembers: React.FC<MembersProp> = (props) => {
             theme.palette.mode === "dark" ? "grey.300" : "grey.800",
           p: 1,
           m: 1,
-          width: 450,
           height: 500,
           borderRadius: 2,
           textAlign: "center",

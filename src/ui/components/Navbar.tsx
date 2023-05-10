@@ -31,6 +31,10 @@ export const Navbar: React.FC = () => {
         navigate(routes.gallery(page));
     }
 
+    const pedidos = () => {
+        navigate(routes.pedidos);
+    }
+
     useEffect(()=>{
         if (userName.length==0) {
             navigate(routes.root);
@@ -50,6 +54,7 @@ export const Navbar: React.FC = () => {
                         <Button onClick={gitHub} color="inherit">GitHub</Button>
                         <Button onClick={rickMorty} color="inherit">Rick & Morty</Button>
                         <Button onClick={gallery} color="inherit">Gallery</Button>
+                        <Button onClick={pedidos} color="inherit">Pedidos</Button>
                     </Box>
                     <Typography color="inherit">User: {userName} | </Typography>
                     <Button onClick={onLogout} color="inherit">Logout</Button>

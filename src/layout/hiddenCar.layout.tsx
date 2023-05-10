@@ -13,7 +13,7 @@ export const GalleryLayoutHiddenCart: React.FC<Props> = ({children}) => {
     <>
         <Navbar />
         <Grid container spacing={1} className={classes.contenedor}>
-          <Grid item xs={12} className={classes.column}>
+          <Grid item xs={12} className={classes.column2}>
             <main>{children}</main>
           </Grid>
         </Grid>

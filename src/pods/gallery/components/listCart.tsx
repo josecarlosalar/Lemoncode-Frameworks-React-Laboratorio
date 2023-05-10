@@ -21,10 +21,10 @@ const handleDelete = (image) => {
   return (
         <>
         {imageCart.map((image)=>{
-                return <h4 key={image.id}>
-                    <span className={classes.btnRemove}>
-                        <Button onClick={()=>handleDelete(image)} variant="outlined" startIcon={<DeleteIcon />}></Button>
-                    </span>Id: {image.id} - {image.title}</h4>
+            return <h4 key={image.id}>
+                <span className={classes.btnRemove}>
+                    <Button onClick={()=>handleDelete(image)} variant="outlined" startIcon={<DeleteIcon />}></Button>
+                </span>Id: {image.id} - {image.title}</h4>
             })}
         </>
   )

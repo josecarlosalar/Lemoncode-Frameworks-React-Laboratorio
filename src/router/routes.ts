@@ -8,6 +8,8 @@ interface SwitchRoutes {
     gallery: string;
     checkoutpay: string;
     gracias: string;
+    pedidos: string;
+    pedidoEnviado: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -18,6 +20,8 @@ export const switchRoutes: SwitchRoutes = {
     gallery: "/gallery/:page",
     checkoutpay: "/checkoutpay",
     gracias: "/gracias",
+    pedidos: "/pedidos",
+    pedidoEnviado: "/pedidoEnviado",
 }
 
 interface Routes extends Omit<SwitchRoutes, 'detail' | 'list' | 'gallery'> {

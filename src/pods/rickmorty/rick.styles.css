@@ -1,6 +1,9 @@
 .containerSearch {
     margin-top: 0;
     margin-bottom: 30px;
+    width: 300px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .search {
@@ -9,18 +12,17 @@
 
 .gridRick {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.gridCard {
-    margin: 0px;
+    height: 70vh;
 }
 
 .contenedor {
-    height: 80vh;
+    padding: 80px
 }
 
 .card {
     margin: 5px;
+    height: 270px;
 }

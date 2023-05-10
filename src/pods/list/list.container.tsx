@@ -1,16 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { MemberEntity } from "./list.vm";
 import { ListComponent } from "./list.component";
 import { datosOrg } from "./list.vm";
 import { getOrganization } from "./api/list.api";
 import { getMemberList } from "./list.repository";
+import { routes } from "@/router";
 
 export const ListContainer: React.FC = () => {
   const {organizacion} = useParams();
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
-  const [organizationName, setOrganizationName] = React.useState<string>(organizacion);
+  const [organizationName] = React.useState<string>(organizacion);
   const [organization, setOrganization] = React.useState<datosOrg[]>([]);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     handleSearch(organizationName);
@@ -31,10 +33,10 @@ export const ListContainer: React.FC = () => {
   const handleSearch = (organizationName: string) => {
     
       getMemberList(organizationName).then(setMembers);
-      
       getOrganization(organizationName).then((json) => {
         setOrganization([convertToDatosOrg(json)]);
       });
+      navigate(routes.list(organizationName));
   };
 
   return (

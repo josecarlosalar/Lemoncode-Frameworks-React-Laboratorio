@@ -6,4 +6,10 @@
 
 .column {
     padding: 20px;
+    width: 60vw;
+}
+
+.column2 {
+    padding: 20px;
+    width: 80vw;
 }

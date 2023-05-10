@@ -31,9 +31,7 @@ const isImageSelected = (image) =>{
                         
                     />
                         <CardContent>
-                        <Typography gutterBottom variant="h6">
-                            {image.title}
-                        </Typography>
+                        <h3>{image.title}</h3>
                         <FormGroup>
                             <FormControlLabel control={<Checkbox checked={isImageSelected(image)} onChange={(e)=>handleChange(e,image)} />} label="Comprar" />
                         </FormGroup>

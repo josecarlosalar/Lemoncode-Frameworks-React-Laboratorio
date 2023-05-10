@@ -34,27 +34,16 @@ export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
     };
 
     const renderListItems = () => {
-    
         return  (
-            <Grid className={classes.contenedor} container>
-                <Grid item xs={12} md={12}>
+            <Grid  container>
+                <Grid item xs={12}>
                     <Search characters={characters} onSearch={handleSearch}/>
                 </Grid>
-                <Grid className={classes.gridRick} item xs={12} md={12}>
-                    <GridRickMorty characters={characters} filteredCharacters={filteredCharacters} currentPage={currentPage} perPage={perPage} handleClickOpen={handleClickOpen}/>
+                <Grid className={classes.gridRick} item xs={12}>
+                    <GridRickMorty characters={characters} filteredCharacters={filteredCharacters} currentPage={currentPage} 
+                                    perPage={perPage} handleClickOpen={handleClickOpen}/>
                 </Grid>
-            </Grid>
-        );
-    };
-
-    return (
-        <>
-            <AppLayout>
-                <Container>
-                    <List>
-                        {renderListItems()}
-                    </List>
-                    
+                <Grid item xs={12}>
                     <Pagination
                         count={Math.ceil(filteredCharacters.length / perPage)}
                         page={currentPage}
@@ -63,8 +52,20 @@ export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
                         showLastButton
                         color="primary"
                     />
+                </Grid>
+            </Grid>
+        );
+    };
+
+    return (
+        <>
+            <AppLayout>
+                <Grid className={classes.contenedor} container spacing={2}>
+                    <List>
+                        {renderListItems()}
+                    </List>
                     <DialogCard openProp={open} handleClose={handleClose} selected={selectedCharacter} /> 
-                </Container>
+                </Grid> 
             </AppLayout>
         </>
     );

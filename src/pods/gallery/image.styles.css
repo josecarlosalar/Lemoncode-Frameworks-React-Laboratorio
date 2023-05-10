@@ -7,6 +7,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .gridCard {
@@ -35,6 +36,7 @@
     height: 300px;
     background-color: rgb(215, 230, 171);
     padding: 5px;
+    padding-left: 20px;
     overflow-y: scroll;
     border: 1px solid rgb(168, 168, 168);
 }
@@ -86,8 +88,9 @@
 }
 
 .gridTable {
-    margin: 0;
-    padding: 0;
+    width: 90vw;
+    display: flex;
+    padding: 50px;
 }
 
 .imageRow {

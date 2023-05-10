@@ -5,3 +5,5 @@ export * from './rickmorty.scene';
 export * from './gallery.scene';
 export * from './checkout.scene';
 export * from './gracias.scene';
+export * from './pedidos.scene';
+export * from './pedidoEnviado.scene';

@@ -6,11 +6,19 @@
     margin-top: 0px;
 }
 
+.gridOrg {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .avatar-list {
     width: 50px;
 }
 
 .containerSearch {
+    padding-left: 130px;
+    padding-right: 130px;
     margin-bottom: 30px;
 }
 
@@ -24,14 +32,31 @@ li {
 }
 
 .search {
-    width: 70%;
+    width: 120px;
 }
 
-.sombra-img {
+.card {
     box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 15px;
+    width: 300px;
 }
 
 .imagen-org {
-    width: 90%;
+    width: 180px;
     box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 15px;
+}
+
+.globalGrid {
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.headGridMembers {
+    text-align: center;
+}
+
+.gridImagen {
+    padding-top: 20px;
+    padding-left: 130px;
 }

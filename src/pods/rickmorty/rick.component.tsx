@@ -11,7 +11,7 @@ interface Props {
 export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage] = useState(8);
-    const [filteredCharacters, setFilteredCharacters] = React.useState(characters);
+    const [filteredCharacters, setFilteredCharacters] = React.useState<Character[]>(characters);
     const [selectedCharacter, setSelectedCharacter] = React.useState<Character>();
     const [open, setOpen] = React.useState(false);
 
@@ -27,10 +27,13 @@ export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
 
     useEffect(() => {
         handleSearch(characters);
+        
     },[characters]);
 
     const handleSearch = (characters: Character[]) => {
       setFilteredCharacters(characters);
+      setCurrentPage(1);
+      renderListItems();
     };
 
     const renderListItems = () => {

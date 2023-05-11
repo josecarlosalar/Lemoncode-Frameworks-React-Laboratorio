@@ -16,16 +16,17 @@ export const Search: React.FC<Props> = (props) => {
     const [name, setName] = React.useState('');
     const [nameDebounce] = useDebounce(name, 1000);
     
-    useEffect(()=>{
-      handleSearch();
-    },[nameDebounce]);
 
-    const handleSearch = () => {
-        const filteredCharacters = characters.filter(
-          (character) => character.name.toLowerCase().includes(nameDebounce.toLowerCase())
-        );
-        onSearch(filteredCharacters);
-    };
+    const search = () => {
+      const filteredCharacters = characters.filter(
+        (character) => character.name.toLowerCase().includes(nameDebounce.toLowerCase())
+      );
+      onSearch(filteredCharacters);
+  };
+
+    useEffect(()=>{
+      search();
+    },[nameDebounce]);
 
     return (
         <>
@@ -43,7 +44,7 @@ export const Search: React.FC<Props> = (props) => {
                     />
             </Grid>
             <Grid item xs={4}>
-                <Button className={classes.search} variant="contained" onClick= {handleSearch}>
+                <Button className={classes.search} variant="contained" onClick= {search}>
                     Search
                 </Button>
             </Grid>

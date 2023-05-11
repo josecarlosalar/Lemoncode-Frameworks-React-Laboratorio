@@ -14,6 +14,10 @@ export const GridRickMorty = (Props) => {
     const { currentPage, perPage, handleClickOpen, filteredCharacters } = Props;
     const startIndex = (currentPage - 1) * perPage;
     const endIndex = startIndex + perPage;
+
+
+
+
     return (
         <>
             {filteredCharacters.slice(startIndex, endIndex).map((filteredCharacter) => (
